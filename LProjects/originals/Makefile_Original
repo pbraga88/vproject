@@ -1,0 +1,11 @@
+TOOLCHAIN:=/opt/labs/ex/09/buildroot/output/host/usr/bin/
+CROSS_COMPILE:=arm-linux-
+
+PATH:=${TOOLCHAIN}:${PATH}
+
+all:
+	${CROSS_COMPILE}gcc led.c -o led
+install:
+	sudo cp led /opt/labs/ex/09/rootfs/usr/sbin/
+clean:
+	rm -Rf *.o led
